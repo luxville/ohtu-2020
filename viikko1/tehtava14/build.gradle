@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+    implementation 'com.google.guava:guava:29.0-jre'
+}
+
+mainClassName = 'ohtu.Main'
+
+run {
+    standardInput = System.in
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ohtu.Main'
+    }
+}
