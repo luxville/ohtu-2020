@@ -2,3 +2,5 @@ build
 .gradle
 *.tmp
 gradle.properties
+
+/viikko2/Verkkokauppa1/build/
