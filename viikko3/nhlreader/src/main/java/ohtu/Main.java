@@ -2,6 +2,10 @@ package ohtu;
 
 import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 import org.apache.http.client.fluent.Request;
 
 public class Main {
@@ -15,7 +19,9 @@ public class Main {
 
         Gson mapper = new Gson();
         Player[] players = mapper.fromJson(bodyText, Player[].class);
-        
+        Arrays.sort(players, Comparator.comparing(Player::getPoints).thenComparing(Player::getGoals));
+        Arrays.sort(players, Collections.reverseOrder());
+
         System.out.println("Players from FIN:\n");
         for (Player player : players) {
             if (player.getNationality().equals("FIN")) {
