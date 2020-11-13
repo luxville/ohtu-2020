@@ -102,6 +102,38 @@ public class Stepdefs {
         assertTrue(driver.getPageSource().contains(pageContent));
     }
 
+    @Given("user with username {string} with password {string} and matching password confirmation {string} is successfully created")
+    public void userWithUsernameWithPasswordAndMatchingPasswordConfirmationIsSuccessfullyCreated(String username, String password, String passwordConfirmation) {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click(); 
+        createUserWith(username, password, passwordConfirmation);
+        element = driver.findElement(By.linkText("continue to application mainpage"));
+        element.click(); 
+        element = driver.findElement(By.linkText("logout"));
+        element.click();
+    }
+
+    @When("username {string} and password {string} are entered")
+    public void usernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
+    }
+
+    @Given("user with username {string} and password {string} with matching password {string} is tried to be created")
+    public void userWithUsernameAndPasswordIsTriedToBeCreated(String username, String password, String passwordConfirmation) {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click(); 
+        createUserWith(username, password, passwordConfirmation);
+        element = driver.findElement(By.linkText("back to home"));
+        element.click();
+    }
+
+    @When("when username {string} and password {string} are entered")
+    public void whenUsernameAndPasswordAreEntered(String username, String password) {
+        logInWith(username, password);
+    }
+
     @After
     public void tearDown(){
         driver.quit();
