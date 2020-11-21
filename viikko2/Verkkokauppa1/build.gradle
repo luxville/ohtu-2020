@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id  'application'
 }
 
@@ -14,6 +15,9 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: springVersion
     compile group: 'org.springframework', name: 'spring-context-support', version: springVersion
     compile group: 'org.springframework', name: 'spring-beans', version: springVersion
+    compile 'com.google.guava:guava:23.0'
+    testCompile 'org.mockito:mockito-core:3.1.0'
+    testCompile 'junit:junit:4.12'
 }
 
 mainClassName = 'ohtu.Main'
