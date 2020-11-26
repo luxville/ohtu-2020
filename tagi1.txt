@@ -1,1 +1,3 @@
 Luodaan tiedosto tagi1:lla leikkimiseen.
+
+Muokataan tiedostoa ensimmäisen kerran. Tänne varmaan kannattaisi laittaa jotain lorem ipsumia, mutta mennään nyt kuitenkin turhanpäiväisellä kotimaisella jaarittelulla...
