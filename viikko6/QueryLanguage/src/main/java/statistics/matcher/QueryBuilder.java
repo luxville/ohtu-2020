@@ -33,4 +33,9 @@ public class QueryBuilder {
         this.rajaa(new HasFewerThan(value, category));
         return this;
     }
+    
+    public QueryBuilder oneOf(Matcher matcher1, Matcher matcher2) {
+        this.matcher = new Or(matcher1, matcher2);
+        return this;
+    }
 }
